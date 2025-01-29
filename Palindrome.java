@@ -1,7 +1,7 @@
 import java.util.Scanner; // Importing the Scanner utility
 
 class Palindrome { // The Palindrome class, titled same as the file name
-    public static void main(String[] args) {
+    static void palindrome() { // Defining the palindrome method
         Scanner stringInput = new Scanner(System.in); // Creating a scanner to get user's string input
         System.out.print("Enter an string: ");
         String string = stringInput.nextLine(); // Sets the user's input equal to the variable string
@@ -18,4 +18,8 @@ class Palindrome { // The Palindrome class, titled same as the file name
         }
         stringInput.close(); // Closes the scanner
     }
+    public static void main(String[] args) {
+        palindrome(); // Calls the palindrome method
+    }
+
 }
