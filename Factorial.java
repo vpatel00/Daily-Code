@@ -13,8 +13,8 @@ class Factorial {
         numinput.close();
     }
 
-public static void main(String[] args) {
-    factorial();
-}
+    public static void main(String[] args) {
+        factorial();
+    }
 
 }
