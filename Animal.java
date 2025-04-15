@@ -24,8 +24,7 @@ class Animal {
     @Override
     public boolean equals(Object o) {
         if (o instanceof Animal) {
-            Animal other = (Animal) o;
-            return this.name.equals(other.name);
+            return this.name == (((Animal) o).name);
         }
         return false;
     }
@@ -56,6 +55,11 @@ class Mammal extends Animal {
     public void speak() {
         System.out.println(name + " says: " + sound);
     }
+
+    public void performTrick() {
+        System.out.println("Performing trick...");
+    }
+    
 }
 // Subclasses of Mammal
 // TODO: Define a class Dog that extends Mammal
@@ -70,6 +74,15 @@ class Dog extends Mammal {
     public void speak() {
         System.out.println(name + " says: Woof!");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Animal) {
+            return this.name.equals(((Animal) o).name);
+        }
+        return false;
+    }
+    
 }
 // TODO: Define a class Cat that extends Mammal
 // - Constructor takes name and passes name, true, "carnivore", 4, "Meow!" to super
@@ -133,7 +146,11 @@ class AnimalKingdomTest {
         System.out.println(a1);
         System.out.println(a2);
 
-        System.out.println(a1.equals(new Dog("Buddy")));    
+        System.out.println(a1.equals(new Dog("Buddy")));
+
+        Mammal dog = (Mammal) a1;
+        dog.performTrick();
+        
     }
 }
 
