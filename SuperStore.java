@@ -39,12 +39,15 @@ class Product {
 
     @Override
     public String toString() {
-        return String.format(); // fill this in later
+        return "Name: " + this.name + "\nPrice: " + this.price + "\nProductId: " + getProductId();
     }
 
     @Override
     public boolean equals(Object o) {
-        // fill this in later
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return name.equals(product.name);
     }
 
 }
@@ -64,7 +67,7 @@ class Electronics extends Product {
 
     @Override
     public String toString() {
-        return ; // fill this in later
+        return "Name: " + this.name + "\nPrice: $" + this.price + "\nProductId: " + getProductId() + "\nBrand: " + this.brand + "\nHas battery: " + this.hasBattery;
     }
 
     final void warrantyInfo() {
@@ -88,7 +91,7 @@ class Grocery extends Product {
 
     @Override
     public String toString() {
-        return ; // fill this in later
+        return "Name: " + this.name + "\nPrice: $" + this.price + "\nProductId: " + getProductId() + "\nWeight: " + this.weight + "kg" + "\nPerishability: " + this.isPerishable + "\n";
     }
 }
 
@@ -105,7 +108,7 @@ final class Toy extends Product {
 
     @Override
     public String toString() {
-        return ; // fill this in later
+        return "Name: " + this.name + "\nPrice: $" + this.price + "\nProductId: " + getProductId() + "\nMinimum Age: " + this.minAge;
     }
 }
 
@@ -127,7 +130,7 @@ class SuperStoreTest {
             System.out.println(products[i]);
         }
 
-        System.out.println(); // fill this in later
+        System.out.println(uhhh.equals(uhhh));
 
     }
 }
@@ -145,12 +148,10 @@ class lego extends Toy {
 // 2. Make a class Coupon with a final discountRate and apply it to a Product
 
 class Coupon {
-    final static double discountRate;
+    final static double discountRate = 0.50;
 }
 
 // 3. Add a method to Electronics called warrantyInfo() and mark it final
-
-
 
 // 4. Use access modifiers appropriately and explain your choices in comments
 
